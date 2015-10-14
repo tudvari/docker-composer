@@ -1,0 +1,34 @@
+{
+  "name": "composer",
+  "version": "1.0.0",
+  "description": "node.js module for generating docker-compose.yml from a json document.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests.js",
+    "coverage": "istanbul cover _mocha tests.js"
+  },
+  "keywords": [
+    "gulp",
+    "docker",
+    "compose",
+    "docker-compose.yml"
+  ],
+  "author": {
+    "name" : "Tibor Udvari",
+    "email": "tudvari@tudvari.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "1.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^1.6.0",
+    "eslint-config-defaults": "^7.0.1",
+    "gulp": "3.9.0",
+    "mocha": "2.3.3",
+    "should": "7.1.0",
+    "gulp-eslint": "1.0.0",
+    "gulp-debug": "2.1.2",
+    "istanbul" : "0.3.22"
+  }
+}
