@@ -32,7 +32,24 @@ You should use the followed rules for the json file, which is the only arguments
 
   image : REGISTRY_HOST:REGISTRY_PORT/REGISTRY_USER/IMAGE_NAME:VERSION
 
+## Usage
+
+```javascript
+
+  var composer = require('docker-composer') ;
+    .
+    .
+    .
+  composer.generate(inputJSON,function(err,result){
+    .
+    .
+    .
+  }) ;
+```
+
+
 ## Full Example
+Input JSON:
 
 ```json
 {
@@ -69,6 +86,35 @@ You should use the followed rules for the json file, which is the only arguments
     }
 }
 ```
+
+Result:
+```yml
+container1:
+  environment:
+   -HOST_PORT:1234
+   -HOST_IP:127.0.0.1
+  extra_hosts:
+   -host1:10.0.0.4
+   -host2:10.0.0.4
+  ports:
+   -3456
+   -8692
+  image: docker.io/tudvari/docker-ubuntu-jdk:latest-jdk6
+container2:
+  environment:
+   -W_PORT:1234
+   -W_IP:127.0.0.1
+  extra_hosts:
+   -host3:10.0.0.4
+   -host4:10.0.0.4
+  ports:
+   -3456
+   -8692
+  image: docker.io/tudvari/docker-ubuntu-jdk:latest-jdk8
+```
+
+
+
 
 ## Future plans
 
