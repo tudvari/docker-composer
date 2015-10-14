@@ -13,6 +13,10 @@
     "compose",
     "docker-compose.yml"
   ],
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/tudvari/composer.git"
+  },
   "author": {
     "name" : "Tibor Udvari",
     "email": "tudvari@tudvari.com"
