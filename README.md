@@ -21,7 +21,7 @@ You should use the followed rules for the json file, which is the only arguments
 
 - ports : This element is array, example syntax: ports :
 
- [ 'PORT_NUMBER1','PORT_NUMBER2']
+  [ 'PORT_NUMBER1','PORT_NUMBER2']
 - environment : This element is a subdocument, you can describe it as the followed style:
 
   { "ENVIRONMENT_VARIABLE1" : "VARIABLE_VALUE"}
