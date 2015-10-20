@@ -11,6 +11,8 @@ The json has a very easy ruleset, it use the docker-compose.yml reference for th
 - environment
 - extra_hosts
 - image
+- command
+- expose
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
@@ -19,18 +21,29 @@ You can find and read the complete docker-compose.yml reference on the next url:
 
 You should use the followed rules for the json file, which is the only arguments for this package.
 
-- ports : This element is array, example syntax: ports :
+- ports : This element is array, example syntax:
 
-  [ 'PORT_NUMBER1','PORT_NUMBER2']
+  ports : [ 'PORT_NUMBER1','PORT_NUMBER2']
+
 - environment : This element is a subdocument, you can describe it as the followed style:
 
   { "ENVIRONMENT_VARIABLE1" : "VARIABLE_VALUE"}
+
 - extra_hosts : Same a the envorinment element:
 
   { "HOST_NAME1" : "IP_ADDRESS", "HOST_NAME2" : "IP_ADDRESS"}
+
 - image : This element is very simple:
 
   image : REGISTRY_HOST:REGISTRY_PORT/REGISTRY_USER/IMAGE_NAME:VERSION
+
+- command : Simple key value pair.
+
+  command : NEW_COMMAND
+
+- expose : Array element, example:
+
+  expose: [ PORT_NUMBER1, PORT_NUMBER2]
 
 ## Usage
 
