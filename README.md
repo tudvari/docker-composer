@@ -21,7 +21,7 @@ You should use the followed rules for the json file, which is the only arguments
 
 - ports : This element is array, example syntax: ports :
 
- [ 'PORT_NUMBER1','PORT_NUMBER2']
+  [ 'PORT_NUMBER1','PORT_NUMBER2']
 - environment : This element is a subdocument, you can describe it as the followed style:
 
   { "ENVIRONMENT_VARIABLE1" : "VARIABLE_VALUE"}
@@ -123,3 +123,4 @@ I would like give much more power into this package. The final goal is, push all
 ## Metrics
 
 [![Code Climate](https://codeclimate.com/github/tudvari/composer/badges/gpa.svg)](https://codeclimate.com/github/tudvari/composer)
+[![Test Coverage](https://codeclimate.com/github/tudvari/composer/badges/coverage.svg)](https://codeclimate.com/github/tudvari/composer/coverage)
