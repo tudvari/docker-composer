@@ -91,10 +91,39 @@ let should = require('should') ;
       })
       done();
     });
+
     it('environment json is invalid',function(done){
         composer.generate(fs.readFileSync('./tests/9_input.json'),function(err,result){
           should.exists(err) ;
           done() ;
         }) ;
     });
+
+    it('expose',function(done){
+      let outputYML = fs.readFileSync('./tests/10_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/10_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
+    it('expose is missing',function(done){
+      let outputYML = fs.readFileSync('./tests/11_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/11_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
+    it('command',function(done){
+      let outputYML = fs.readFileSync('./tests/12_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/12_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
   });

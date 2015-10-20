@@ -21,7 +21,7 @@ function processProps(serviceName, serviceProperties, cb) {
   for(let prop of Object.getOwnPropertyNames(serviceProperties)) {
 
     //ports
-    if("ports" === prop && serviceProperties[prop].length > 0) {
+    if("ports" === prop && serviceProperties[prop].length) {
       ymlFragment = ymlFragment.concat("  ").concat('ports:\n') ;
 
       for(let portNum of serviceProperties[prop]){
@@ -31,14 +31,14 @@ function processProps(serviceName, serviceProperties, cb) {
 
     //image
     if("image" === prop) {
-      ymlFragment = ymlFragment.concat("  image: ").concat(serviceProperties[prop]) ;
+      ymlFragment = ymlFragment.concat("  image: ").concat(serviceProperties[prop]).concat('\n') ;
     }
 
     //environment
     if("environment" === prop){
          let environmentJSON = serviceProperties[prop] ;
 
-         if(Object.getOwnPropertyNames(environmentJSON).length > 0 ){
+         if(Object.getOwnPropertyNames(environmentJSON).length){
 
            ymlFragment = ymlFragment.concat("  environment:").concat('\n');
 
@@ -54,7 +54,7 @@ function processProps(serviceName, serviceProperties, cb) {
 
          let hostsJSON = serviceProperties[prop] ;
 
-         if(Object.getOwnPropertyNames(hostsJSON).length > 0 ) {
+         if(Object.getOwnPropertyNames(hostsJSON).length) {
 
            ymlFragment = ymlFragment.concat("  extra_hosts:").concat('\n');
 
@@ -63,6 +63,19 @@ function processProps(serviceName, serviceProperties, cb) {
               ymlFragment = ymlFragment.concat("   -").concat(envJSONKey).concat(":").concat(hostsValue).concat('\n') ;
             }
          }
+    }
+    //expose
+    if("expose" === prop && serviceProperties[prop].length) {
+      ymlFragment = ymlFragment.concat("  ").concat('expose:\n') ;
+
+      for(let exposePort of serviceProperties[prop]){
+        ymlFragment = ymlFragment.concat("   -").concat(exposePort).concat('\n') ;
+      }
+    }
+
+    //command
+    if("command" === prop) {
+      ymlFragment = ymlFragment.concat("  command: ").concat(serviceProperties[prop]).concat('\n') ;
     }
   }
   fragments.push(ymlFragment) ;

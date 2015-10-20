@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node.js module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
