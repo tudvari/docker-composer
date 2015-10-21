@@ -13,6 +13,8 @@ The json has a very easy ruleset, it use the docker-compose.yml reference for th
 - image
 - command
 - expose
+- dns
+- dns_search
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
@@ -51,11 +53,11 @@ You should use the followed rules for the json file, which is the only arguments
 
 - dns: Array of the DNS Servers
 
-  dns : ['8.8.8.8','127.0.0.1']
+  dns : ['DNS_SERVER_IP','DNS_SERVER_IP']
 
-- dns_serach Array of the DNS Search Servers
+- dns_search: Array of the DNS Search Servers
 
-  dns_search" : ["dc1.example.com","dc2.example.com"]
+  dns_search : ["DNS_SEARCH_SERVER1","DNS_SEARCH_SERVER2"]
 
 ## Usage
 
