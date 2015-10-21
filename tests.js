@@ -144,4 +144,24 @@ let should = require('should') ;
       });
       done() ;
     }) ;
+    it('dns_search',function(done){
+      let outputYML = fs.readFileSync('./tests/16_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/16_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
+
+    it('dns_search missing',function(done){
+      let outputYML = fs.readFileSync('./tests/17_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/17_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
+
   });

@@ -86,6 +86,15 @@ function processProps(serviceName, serviceProperties, cb) {
         ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
       }
     }
+
+    //dns search
+    if("dns_search" === prop && serviceProperties[prop].length){
+      ymlFragment = ymlFragment.concat("  ").concat('dns_search:\n') ;
+
+      for(let dnsServerIP of serviceProperties[prop]){
+        ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
+      }
+    }
   }
   fragments.push(ymlFragment) ;
   cb(null,ymlFragment) ;
