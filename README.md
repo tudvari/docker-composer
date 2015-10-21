@@ -17,6 +17,10 @@ The json has a very easy ruleset, it use the docker-compose.yml reference for th
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
 
+## Release Notes
+
+You can read the changelist: [here](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md)
+
 ## Rules of the json
 
 You should use the followed rules for the json file, which is the only arguments for this package.

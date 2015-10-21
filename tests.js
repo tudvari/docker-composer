@@ -126,4 +126,13 @@ let should = require('should') ;
       });
       done() ;
     }) ;
+    it('dns',function(done){
+      let outputYML = fs.readFileSync('./tests/14_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/14_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
   });

@@ -77,6 +77,15 @@ function processProps(serviceName, serviceProperties, cb) {
     if("command" === prop) {
       ymlFragment = ymlFragment.concat("  command: ").concat(serviceProperties[prop]).concat('\n') ;
     }
+
+    //dns
+    if("dns" === prop && serviceProperties[prop].length){
+      ymlFragment = ymlFragment.concat("  ").concat('dns:\n') ;
+
+      for(let dnsServerIP of serviceProperties[prop]){
+        ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
+      }
+    }
   }
   fragments.push(ymlFragment) ;
   cb(null,ymlFragment) ;
