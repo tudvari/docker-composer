@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 1.0.4 (2015.10.21)
+
+- Small fixes
+
 ## Version 1.0.3 (2015.10.21)
 
 - New implemented keywords: dns, dns_search
