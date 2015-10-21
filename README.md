@@ -49,6 +49,14 @@ You should use the followed rules for the json file, which is the only arguments
 
   expose: [ PORT_NUMBER1, PORT_NUMBER2]
 
+- dns: Array of the DNS Servers
+
+  dns : ['8.8.8.8','127.0.0.1']
+
+- dns_serach Array of the DNS Search Servers
+
+  dns_search" : ["dc1.example.com","dc2.example.com"]
+
 ## Usage
 
 ```javascript
@@ -70,64 +78,77 @@ Input JSON:
 
 ```json
 {
-  "container1": {
+    "service": {
         "environment": {
-            "HOST_PORT": "1234",
-            "HOST_IP"  : "127.0.0.1"
+            "WARPER_PORT": "1234",
+            "WARPER_IP"  : "127.0.0.1"
         },
         "extra_hosts": {
-            "host1": "10.0.0.4",
-            "host2": "10.0.0.4"
+            "amqphost": "10.0.0.4",
+            "mongohost": "10.0.0.4"
         },
         "ports": [
             "3456",
             "8692"
         ],
-        "image" : "docker.io/tudvari/docker-ubuntu-jdk:latest-jdk6"
+        "image" : "tudvari.com:5000/warper/ms_config:LATEST",
+        "dns" : [
+          "8.8.8.8",
+          "127.0.0.1"
+        ],
+        "dns_search" : [
+          "dc1.example.com",
+          "dc2.example.com"
+        ]
 
     },
-    "container2": {
+    "service2": {
         "environment": {
-            "W_PORT": "1234",
-            "W_IP": "127.0.0.1"
+            "WARPER_PORT": "1234",
+            "WARPER_IP": "127.0.0.1"
         },
         "extra_hosts": {
-            "host3": "10.0.0.4",
-            "host4": "10.0.0.4"
+            "amqphost": "10.0.0.4",
+            "mongohost": "10.0.0.4"
         },
         "ports": [
             "3456",
             "8692"
-        ],
-        "image" : "docker.io/tudvari/docker-ubuntu-jdk:latest-jdk8"
+        ]
     }
 }
+
 ```
 
 Result:
 ```yml
-container1:
+service:
   environment:
-   -HOST_PORT:1234
-   -HOST_IP:127.0.0.1
+   -WARPER_PORT:1234
+   -WARPER_IP:127.0.0.1
   extra_hosts:
-   -host1:10.0.0.4
-   -host2:10.0.0.4
+   -amqphost:10.0.0.4
+   -mongohost:10.0.0.4
   ports:
    -3456
    -8692
-  image: docker.io/tudvari/docker-ubuntu-jdk:latest-jdk6
-container2:
+  image: tudvari.com:5000/warper/ms_config:LATEST
+  dns:
+   -8.8.8.8
+   -127.0.0.1
+  dns_search:
+   -dc1.example.com
+   -dc2.example.com
+service2:
   environment:
-   -W_PORT:1234
-   -W_IP:127.0.0.1
+   -WARPER_PORT:1234
+   -WARPER_IP:127.0.0.1
   extra_hosts:
-   -host3:10.0.0.4
-   -host4:10.0.0.4
+   -amqphost:10.0.0.4
+   -mongohost:10.0.0.4
   ports:
    -3456
    -8692
-  image: docker.io/tudvari/docker-ubuntu-jdk:latest-jdk8
 ```
 
 
