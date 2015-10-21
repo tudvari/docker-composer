@@ -135,4 +135,13 @@ let should = require('should') ;
       });
       done() ;
     }) ;
+    it('dns missing',function(done){
+      let outputYML = fs.readFileSync('./tests/15_output.yml');
+
+      composer.generate(fs.readFileSync('./tests/15_input.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
   });
