@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 1.0.5 (2015.10.29)
+
+- New implemented keywords, mem_limit, memswap_limit
+
 ## Version 1.0.4 (2015.10.21)
 
 - Small fixes

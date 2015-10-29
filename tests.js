@@ -163,5 +163,23 @@ let should = require('should') ;
       });
       done() ;
     }) ;
+    it('mem_limit',function(done){
+      let outputYML = fs.readFileSync('./tests/mem_limit_1.yml');
+
+      composer.generate(fs.readFileSync('./tests/mem_limit_1.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
+    it('memswap_limit',function(done){
+      let outputYML = fs.readFileSync('./tests/memswap_limit_1.yml');
+
+      composer.generate(fs.readFileSync('./tests/memswap_limit_1.json'),function(err,result){
+        should.not.exist(err) ;
+        should.equal(result.replace(/(\r\n|\n|\r)/gm,""),outputYML.toString().replace(/(\r\n|\n|\r)/gm,"")) ;
+      });
+      done() ;
+    }) ;
 
   });

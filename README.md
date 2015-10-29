@@ -15,6 +15,8 @@ The json has a very easy ruleset, it use the docker-compose.yml reference for th
 - expose
 - dns
 - dns_search
+- mem_limit
+- memswap_limit
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
@@ -23,7 +25,7 @@ You can find and read the complete docker-compose.yml reference on the next url:
 
 You can read the changelist: [here](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md)
 
-## Rules of the json
+## Rules of the JSON
 
 You should use the followed rules for the json file, which is the only arguments for this package.
 
@@ -58,6 +60,14 @@ You should use the followed rules for the json file, which is the only arguments
 - dns_search: Array of the DNS Search Servers
 
   dns_search : ["DNS_SEARCH_SERVER1","DNS_SEARCH_SERVER2"]
+
+- mem_limit: Maximum memory usage of the container
+
+  mem_limit: <number>[<unit>], where unit = b,k,m,g or inf = infinity
+
+- memswap_limit: Maximum swap memory usage of the container
+
+  memswap_limit: <number>[<unit>], where unit = b,k,m,g or inf = infinity
 
 ## Usage
 
@@ -99,9 +109,11 @@ Input JSON:
           "127.0.0.1"
         ],
         "dns_search" : [
-          "dc1.example.com",
-          "dc2.example.com"
-        ]
+          "search1.example.com",
+          "search2.example.com"
+        ],
+        "mem_limit" : "25M",
+        "memswap_limit": "128k"
 
     },
     "service2": {
@@ -119,7 +131,6 @@ Input JSON:
         ]
     }
 }
-
 ```
 
 Result:
@@ -139,8 +150,10 @@ service:
    -8.8.8.8
    -127.0.0.1
   dns_search:
-   -dc1.example.com
-   -dc2.example.com
+   -search1.example.com
+   -search2.example.com
+  mem_limit: 25M
+  memswap_limit: 128k
 service2:
   environment:
    -WARPER_PORT:1234

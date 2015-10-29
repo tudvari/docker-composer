@@ -95,6 +95,15 @@ function processProps(serviceName, serviceProperties, cb) {
         ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
       }
     }
+
+    //memory limit
+    if("mem_limit" === prop){
+      ymlFragment = ymlFragment.concat("  mem_limit: ").concat(serviceProperties[prop]).concat('\n') ;
+    }
+    //memory swap limit
+    if("memswap_limit" === prop){
+      ymlFragment = ymlFragment.concat("  memswap_limit: ").concat(serviceProperties[prop]).concat('\n') ;
+    }
   }
   fragments.push(ymlFragment) ;
   cb(null,ymlFragment) ;

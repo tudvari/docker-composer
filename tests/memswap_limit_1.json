@@ -13,17 +13,8 @@
             "8692"
         ],
         "image" : "tudvari.com:5000/warper/ms_config:LATEST",
-        "dns" : [
-          "8.8.8.8",
-          "127.0.0.1"
-        ],
-        "dns_search" : [
-          "search1.example.com",
-          "search2.example.com"
-        ],
-        "mem_limit" : "25M",
-        "memswap_limit": "128k"
-
+        "mem_limit" : "256M",
+        "memswap_limit" : "128m"
     },
     "service2": {
         "environment": {
