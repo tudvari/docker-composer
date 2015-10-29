@@ -63,11 +63,11 @@ You should use the followed rules for the json file, which is the only arguments
 
 - mem_limit: Maximum memory usage of the container
 
-  mem_limit: <number>[<unit>], where unit = b,k,m,g or inf = infinity
+  mem_limit: number[unit], where unit = b,k,m,g or inf = infinity
 
 - memswap_limit: Maximum swap memory usage of the container
 
-  memswap_limit: <number>[<unit>], where unit = b,k,m,g or inf = infinity
+  memswap_limit: number[unit], where unit = b,k,m,g or inf = infinity
 
 ## Usage
 
