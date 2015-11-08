@@ -17,6 +17,7 @@ The JSON has a very easy ruleset, it use the docker-compose.yml reference for th
 - dns_search
 - mem_limit
 - memswap_limit
+- cpu_shares
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
