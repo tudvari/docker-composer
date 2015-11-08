@@ -17,13 +17,13 @@ function processProps(serviceName, serviceProperties, cb) {
 
   ymlFragment = ymlFragment.concat(serviceName).concat(':').concat('\n') ;
 
-  for(let prop of Object.getOwnPropertyNames(serviceProperties)) {
+  for (let prop of Object.getOwnPropertyNames(serviceProperties)) {
 
     //ports
     if ("ports" === prop && serviceProperties[prop].length) {
       ymlFragment = ymlFragment.concat("  ").concat('ports:\n') ;
 
-      for(let portNum of serviceProperties[prop]){
+      for (let portNum of serviceProperties[prop]) {
         ymlFragment = ymlFragment.concat("   -").concat(portNum).concat('\n') ;
       }
     }
@@ -40,7 +40,7 @@ function processProps(serviceName, serviceProperties, cb) {
 
         ymlFragment = ymlFragment.concat("  environment:").concat('\n');
 
-        for(let envJSONKey of Object.getOwnPropertyNames(environmentJSON)) {
+        for (let envJSONKey of Object.getOwnPropertyNames(environmentJSON)) {
           let environmentValue = environmentJSON[envJSONKey];
           ymlFragment = ymlFragment.concat("   -").concat(envJSONKey).concat(":").concat(environmentValue).concat('\n') ;
         }
@@ -54,7 +54,7 @@ function processProps(serviceName, serviceProperties, cb) {
 
         ymlFragment = ymlFragment.concat("  extra_hosts:").concat('\n');
 
-        for(let envJSONKey of Object.getOwnPropertyNames(hostsJSON)) {
+        for (let envJSONKey of Object.getOwnPropertyNames(hostsJSON)) {
           let hostsValue = hostsJSON[envJSONKey];
           ymlFragment = ymlFragment.concat("   -").concat(envJSONKey).concat(":").concat(hostsValue).concat('\n') ;
         }
@@ -64,7 +64,7 @@ function processProps(serviceName, serviceProperties, cb) {
     if ("expose" === prop && serviceProperties[prop].length) {
       ymlFragment = ymlFragment.concat("  ").concat('expose:\n') ;
 
-      for(let exposePort of serviceProperties[prop]){
+      for (let exposePort of serviceProperties[prop]) {
         ymlFragment = ymlFragment.concat("   -").concat(exposePort).concat('\n') ;
       }
     }
@@ -78,7 +78,7 @@ function processProps(serviceName, serviceProperties, cb) {
     if ("dns" === prop && serviceProperties[prop].length) {
       ymlFragment = ymlFragment.concat("  ").concat('dns:\n') ;
 
-      for(let dnsServerIP of serviceProperties[prop]){
+      for (let dnsServerIP of serviceProperties[prop]) {
         ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
       }
     }
@@ -87,7 +87,7 @@ function processProps(serviceName, serviceProperties, cb) {
     if ("dns_search" === prop && serviceProperties[prop].length) {
       ymlFragment = ymlFragment.concat("  ").concat('dns_search:\n') ;
 
-      for(let dnsServerIP of serviceProperties[prop]){
+      for (let dnsServerIP of serviceProperties[prop]) {
         ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
       }
     }
@@ -96,10 +96,18 @@ function processProps(serviceName, serviceProperties, cb) {
     if ("mem_limit" === prop) {
       ymlFragment = ymlFragment.concat("  mem_limit: ").concat(serviceProperties[prop]).concat('\n') ;
     }
+
     //memory swap limit
     if ("memswap_limit" === prop) {
       ymlFragment = ymlFragment.concat("  memswap_limit: ").concat(serviceProperties[prop]).concat('\n') ;
     }
+
+    //cpu_shares
+    if ("cpu_shares" === prop) {
+      ymlFragment = ymlFragment.concat("  cpu_shares: ").concat(serviceProperties[prop]).concat('\n') ;
+    }
+
+
   }
   fragments.push(ymlFragment) ;
   cb(null, ymlFragment) ;
@@ -126,7 +134,7 @@ module.exports.generate = function(json, callback) {
   async.forEachOf(parsedJSON, function(value, key, callback) {
     processProps(key, value, callback);
   }) ;let resultString = '';
-  for(let fragment of fragments) {
+  for (let fragment of fragments) {
     resultString = resultString.concat(fragment).concat('\n') ;
   }
   return callback(null, resultString);

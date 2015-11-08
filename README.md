@@ -1,11 +1,11 @@
 # Composer
-Node.js package for generating docker-compose.yml file for containers from a json.
+Node.js package for generating docker-compose.yml file for containers from a JSON document.
 
 ## About the package
 
-The main goal of this repository to create a small lightweight npm package, which generates docker-compose.yml from a json file.
+The main goal of this repository to create a small lightweight npm package, which generates docker-compose.yml from a JSON file.
 
-The json has a very easy ruleset, it use the docker-compose.yml reference for the available elements. This version support the followed commands from the docker-compose.yml reference:
+The JSON has a very easy ruleset, it use the docker-compose.yml reference for the available elements. This version support the followed commands from the docker-compose.yml reference:
 
 - ports
 - environment
@@ -27,7 +27,7 @@ You can read the changelist: [here](https://github.com/tudvari/docker-composer/b
 
 ## Rules of the JSON
 
-You should use the followed rules for the json file, which is the only arguments for this package.
+You should use the followed rules for the JSON file, which is the only argument for this package.
 
 - ports : This element is array, example syntax:
 
@@ -69,6 +69,9 @@ You should use the followed rules for the json file, which is the only arguments
 
   memswap_limit: number[unit], where unit = b,k,m,g or inf = infinity
 
+- cpu_shares: Proportion of CPU cycles
+
+  cpu_shares: number (default: 1024, 0 will be ignored)
 ## Usage
 
 ```javascript

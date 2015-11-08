@@ -1,8 +1,12 @@
 # Release Notes
 
+## Version 1.0.6 (2015.11.08)
+
+- New implemented keywords: cpu_shares,cpuset
+
 ## Version 1.0.5 (2015.10.29)
 
-- New implemented keywords, mem_limit, memswap_limit
+- New implemented keywords: mem_limit, memswap_limit
 
 ## Version 1.0.4 (2015.10.21)
 
