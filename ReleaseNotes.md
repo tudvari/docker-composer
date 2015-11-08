@@ -2,7 +2,7 @@
 
 ## Version 1.0.6 (2015.11.08)
 
-- New implemented keywords: cpu_shares,cpuset
+- New implemented keywords: cpu_shares
 
 ## Version 1.0.5 (2015.10.29)
 

@@ -107,6 +107,9 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  cpu_shares: ").concat(serviceProperties[prop]).concat('\n') ;
     }
 
+    //cpuset
+
+
 
   }
   fragments.push(ymlFragment) ;

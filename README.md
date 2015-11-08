@@ -116,7 +116,8 @@ Input JSON:
           "search2.example.com"
         ],
         "mem_limit" : "25M",
-        "memswap_limit": "128k"
+        "memswap_limit": "128k",
+        "cpu_shares" : 43
 
     },
     "service2": {
@@ -133,8 +134,7 @@ Input JSON:
             "8692"
         ]
     }
-}
-```
+}```
 
 Result:
 ```yml
@@ -157,6 +157,7 @@ service:
    -search2.example.com
   mem_limit: 25M
   memswap_limit: 128k
+  cpu_shares: 43
 service2:
   environment:
    -WARPER_PORT:1234
