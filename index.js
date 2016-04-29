@@ -24,7 +24,7 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  ").concat('ports:\n') ;
 
       for (let portNum of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   -").concat(portNum).concat('\n') ;
+        ymlFragment = ymlFragment.concat("   - ").concat(portNum).concat('\n') ;
       }
     }
 
@@ -42,7 +42,7 @@ function processProps(serviceName, serviceProperties, cb) {
 
         for (let envJSONKey of Object.getOwnPropertyNames(environmentJSON)) {
           let environmentValue = environmentJSON[envJSONKey];
-          ymlFragment = ymlFragment.concat("   -").concat(envJSONKey).concat(":").concat(environmentValue).concat('\n') ;
+          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(environmentValue).concat('\n') ;
         }
       }
     }
@@ -56,7 +56,7 @@ function processProps(serviceName, serviceProperties, cb) {
 
         for (let envJSONKey of Object.getOwnPropertyNames(hostsJSON)) {
           let hostsValue = hostsJSON[envJSONKey];
-          ymlFragment = ymlFragment.concat("   -").concat(envJSONKey).concat(":").concat(hostsValue).concat('\n') ;
+          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(hostsValue).concat('\n') ;
         }
       }
     }
@@ -65,7 +65,7 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  ").concat('expose:\n') ;
 
       for (let exposePort of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   -").concat(exposePort).concat('\n') ;
+        ymlFragment = ymlFragment.concat("   - ").concat(exposePort).concat('\n') ;
       }
     }
 
@@ -79,7 +79,7 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  ").concat('dns:\n') ;
 
       for (let dnsServerIP of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
+        ymlFragment = ymlFragment.concat("   - ").concat(dnsServerIP).concat('\n') ;
       }
     }
 
@@ -88,7 +88,7 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  ").concat('dns_search:\n') ;
 
       for (let dnsServerIP of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   -").concat(dnsServerIP).concat('\n') ;
+        ymlFragment = ymlFragment.concat("   - ").concat(dnsServerIP).concat('\n') ;
       }
     }
 
@@ -107,7 +107,16 @@ function processProps(serviceName, serviceProperties, cb) {
       ymlFragment = ymlFragment.concat("  cpu_shares: ").concat(serviceProperties[prop]).concat('\n') ;
     }
 
-    //cpuset
+    //cpuset -> TBD
+
+    //volumes
+    if ("volumes" === prop && serviceProperties[prop].length) {
+      ymlFragment = ymlFragment.concat("  ").concat("volumes:\n");
+
+      for (let volumeMap of serviceProperties[prop]) {
+        ymlFragment = ymlFragment.concat("    - ").concat(volumeMap).concat('\n') ;
+      }
+    }
 
 
 
