@@ -10,7 +10,7 @@ service:
    - 8692
   image: tudvari.com:5000/warper/ms_config:LATEST
   volumes:
-    - /home/someuser/test:/var/www/test
+   - /home/someuser/test:/var/www/test
 service2:
   environment:
    - WARPER_PORT:1234
@@ -22,4 +22,4 @@ service2:
    - 3456
    - 8692
   volumes:
-    - /home/someuser/test:/var/www/test
+   - /home/someuser/test:/var/www/test

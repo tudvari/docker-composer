@@ -5,20 +5,45 @@ Node.js package for generating docker-compose.yml file for containers from a JSO
 
 The main goal of this repository to create a small lightweight npm package, which generates docker-compose.yml from a JSON file.
 
-The JSON has a very easy ruleset, it use the docker-compose.yml reference for the available elements. This version support the followed commands from the docker-compose.yml reference:
 
-- ports
-- environment
-- extra_hosts
-- image
+The JSON has a very easy ruleset, it use the docker-compose.yml reference for the available elements. This version support commands from the docker-compose.yml reference that have values as only one line (string, number), array, or object (one level)
+
+- build (one level)
+- cap_add
+- cap_drop
 - command
-- expose
+- cgroup_parent
+- container_name
+- devices
+- depends_on
 - dns
 - dns_search
-- mem_limit
-- memswap_limit
-- cpu_shares
+- tmpfs
+- entrypoint
+- env_file
+- environment
+- expose
+- extends
+- external_links
+- extra_hosts
+- image
+- labels
+- links
+- logging (one level)
+- log_driver
+- log_opt
+- net
+- network_mode
+- networks
+- pid
+- ports
+- security_opt
+- stop_signal
 - volumes
+- volume_driver
+- volumes_from
+- cpu_shares, cpu_quota, cpuset, domainname, hostname, ipc, mac_address, mem_limit, memswap_limit, privileged, read_only, restart, shm_size, stdin_open, tty, user, working_dir
+- 
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)

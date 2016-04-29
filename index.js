@@ -3,151 +3,101 @@
 const async = require('async');
 let fragments = [];
 
-function processProps(serviceName, serviceProperties, cb) {
+/**
+* @function processProp
+* @param prop {String} - property name
+* @param serviceProperties {Object} - list with serviceProperties
+* @param ymlFragment {String} - reference for the YML fragment to write to
+* @return {String} - composed yml structure for the prop
+*/
+function processSingleProp(prop, serviceProperties){
+  prop = prop.trim();
+  var ymlFragment = '';
+  if(serviceProperties[prop] == undefined) return "";
+  // Check if it is an array
+  if(Array.isArray(serviceProperties[prop])) {
+    // Array entry -> iterate and build props
+    if(serviceProperties[prop].length > 0){
+      ymlFragment = ymlFragment.concat("  ").concat(prop + ':\n');
+      for (let propVal of serviceProperties[prop]) {
+        ymlFragment = ymlFragment.concat("   - ").concat(propVal).concat('\n');
+      };
+    };
+  } else {
+    if(typeof serviceProperties[prop] === "object" && !Array.isArray(serviceProperties[prop])){
+      let objectKey = serviceProperties[prop];
+      if (Object.getOwnPropertyNames(objectKey).length) {
+        // Object entry -> iterate and build props
+        ymlFragment = ymlFragment.concat("  ").concat(prop + ':\n');
+        for (let envJSONKey of Object.getOwnPropertyNames(objectKey)) {
+          let objValue = objectKey[envJSONKey];
+          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(objValue).concat('\n') ;
+        }
+      };
+    } else {
+      // It's not an array
+      ymlFragment = ymlFragment.concat("  " + prop + ": ").concat(serviceProperties[prop]).concat('\n');
+    };
+  };
+  // return the fragment
+  return ymlFragment;
+};
 
+function processProps(serviceName, serviceProperties, cb) {
+  // Instantiate the ymlFragment
   let ymlFragment = '';
+  // Check the existance of the service name
   if (!serviceName) {
     let error = new Error('missing servicename..');
     return cb(error);
   }
+  // Check the existance of serviceProperties
   if (!serviceProperties) {
     let error = new Error('missing properties..');
     return cb(error);
   }
 
-  ymlFragment = ymlFragment.concat(serviceName).concat(':').concat('\n') ;
+  // Concat the service name
+  fragments.push(ymlFragment.concat(serviceName).concat(':').concat('\n'));
 
+  // Iterate throughout all the JSON file and build the requested services in the YML file
   for (let prop of Object.getOwnPropertyNames(serviceProperties)) {
+    fragments.push(processSingleProp(prop, serviceProperties));
+  };
+};
 
-    //ports
-    if ("ports" === prop && serviceProperties[prop].length) {
-      ymlFragment = ymlFragment.concat("  ").concat('ports:\n') ;
-
-      for (let portNum of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   - ").concat(portNum).concat('\n') ;
-      }
-    }
-
-    //image
-    if ("image" === prop) {
-      ymlFragment = ymlFragment.concat("  image: ").concat(serviceProperties[prop]).concat('\n') ;
-    }
-
-    //environment
-    if ("environment" === prop) {
-      let environmentJSON = serviceProperties[prop];
-      if (Object.getOwnPropertyNames(environmentJSON).length) {
-
-        ymlFragment = ymlFragment.concat("  environment:").concat('\n');
-
-        for (let envJSONKey of Object.getOwnPropertyNames(environmentJSON)) {
-          let environmentValue = environmentJSON[envJSONKey];
-          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(environmentValue).concat('\n') ;
-        }
-      }
-    }
-
-    //extra_hosts
-    if ("extra_hosts" === prop) {
-      let hostsJSON = serviceProperties[prop];
-      if (Object.getOwnPropertyNames(hostsJSON).length) {
-
-        ymlFragment = ymlFragment.concat("  extra_hosts:").concat('\n');
-
-        for (let envJSONKey of Object.getOwnPropertyNames(hostsJSON)) {
-          let hostsValue = hostsJSON[envJSONKey];
-          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(hostsValue).concat('\n') ;
-        }
-      }
-    }
-    //expose
-    if ("expose" === prop && serviceProperties[prop].length) {
-      ymlFragment = ymlFragment.concat("  ").concat('expose:\n') ;
-
-      for (let exposePort of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   - ").concat(exposePort).concat('\n') ;
-      }
-    }
-
-    //command
-    if ("command" === prop) {
-      ymlFragment = ymlFragment.concat("  command: ").concat(serviceProperties[prop]).concat('\n') ;
-    }
-
-    //dns
-    if ("dns" === prop && serviceProperties[prop].length) {
-      ymlFragment = ymlFragment.concat("  ").concat('dns:\n') ;
-
-      for (let dnsServerIP of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   - ").concat(dnsServerIP).concat('\n') ;
-      }
-    }
-
-    //dns search
-    if ("dns_search" === prop && serviceProperties[prop].length) {
-      ymlFragment = ymlFragment.concat("  ").concat('dns_search:\n') ;
-
-      for (let dnsServerIP of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("   - ").concat(dnsServerIP).concat('\n') ;
-      }
-    }
-
-    //memory limit
-    if ("mem_limit" === prop) {
-      ymlFragment = ymlFragment.concat("  mem_limit: ").concat(serviceProperties[prop]).concat('\n') ;
-    }
-
-    //memory swap limit
-    if ("memswap_limit" === prop) {
-      ymlFragment = ymlFragment.concat("  memswap_limit: ").concat(serviceProperties[prop]).concat('\n') ;
-    }
-
-    //cpu_shares
-    if ("cpu_shares" === prop) {
-      ymlFragment = ymlFragment.concat("  cpu_shares: ").concat(serviceProperties[prop]).concat('\n') ;
-    }
-
-    //cpuset -> TBD
-
-    //volumes
-    if ("volumes" === prop && serviceProperties[prop].length) {
-      ymlFragment = ymlFragment.concat("  ").concat("volumes:\n");
-
-      for (let volumeMap of serviceProperties[prop]) {
-        ymlFragment = ymlFragment.concat("    - ").concat(volumeMap).concat('\n') ;
-      }
-    }
-
-
-
-  }
-  fragments.push(ymlFragment) ;
-  cb(null, ymlFragment) ;
-}
-
+/**
+* @exports
+*/
 module.exports.generate = function(json, callback) {
 
-  fragments = [] ;
+  fragments = [];
 
   //input validations
-
   if (!json) {
     return callback(new Error('json is missing'));
   }
+
   let parsedJSON = '';
+
   try {
     parsedJSON = JSON.parse(json) ;
   } catch (err) {
+    // Send back the error
     return callback(err);
   }
 
-  //json processing
+  // JSON processing
 
   async.forEachOf(parsedJSON, function(value, key, callback) {
     processProps(key, value, callback);
-  }) ;let resultString = '';
+  }) ;
+
+  let resultString = '';
+
   for (let fragment of fragments) {
-    resultString = resultString.concat(fragment).concat('\n') ;
+    resultString = resultString.concat(fragment);
   }
+  // Return the callback with the resulted string
   return callback(null, resultString);
 }
