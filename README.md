@@ -18,6 +18,7 @@ The JSON has a very easy ruleset, it use the docker-compose.yml reference for th
 - mem_limit
 - memswap_limit
 - cpu_shares
+- volumes
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)
@@ -73,6 +74,11 @@ You should use the followed rules for the JSON file, which is the only argument 
 - cpu_shares: Proportion of CPU cycles
 
   cpu_shares: number (default: 1024, 0 will be ignored)
+
+- volumes : Array element, example:
+
+  volumes: [ "/var/test", "var/test:/opt/test"]
+
 ## Usage
 
 ```javascript
