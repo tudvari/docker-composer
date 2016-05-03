@@ -42,8 +42,12 @@ The JSON has a very easy ruleset, it use the docker-compose.yml reference for th
 - volumes
 - volume_driver
 - volumes_from
-- cpu_shares, cpu_quota, cpuset, domainname, hostname, ipc, mac_address, mem_limit, memswap_limit, privileged, read_only, restart, shm_size, stdin_open, tty, user, working_dir
-- 
+- cpu_shares,cpu_quota, cpuset
+- domainname, hostname, ipc, mac_address
+- mem_limit, memswap_limit, privileged
+- read_only, restart, shm_size, stdin_open
+- tty, user, working_dir
+
 
 
 You can find and read the complete docker-compose.yml reference on the next url: [Compose Reference](https://docs.docker.com/compose/yml/)

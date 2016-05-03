@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 2.0.0 (2016.05.03)
+- Tons of new implemented keywords many thanks to Alex.
+
 ## Version 1.0.7 (2016.04.29)
 
 - Fixed a bug that was preventing the docker-compose to read array/object variables from the generated YML file
