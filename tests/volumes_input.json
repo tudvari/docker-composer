@@ -12,10 +12,7 @@
             "3456",
             "8692"
         ],
-        "image" : "tudvari.com:5000/warper/ms_config:LATEST",
-        "volumes": [
-          "/home/someuser/test:/var/www/test"
-        ]
+        "image" : "tudvari.com:5000/warper/ms_config:LATEST"
 
     },
     "service2": {
@@ -30,9 +27,6 @@
         "ports": [
             "3456",
             "8692"
-        ],
-        "volumes": [
-          "/home/someuser/test:/var/www/test"
         ]
     }
 }

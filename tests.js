@@ -36,10 +36,30 @@ describe('composer', function() {
     done() ;
   }) ;
 
+  it('volumes missing', function(done) {
+    let outputYML = fs.readFileSync('./tests/volumes_output.yml');
+
+    composer.generate(fs.readFileSync('./tests/volumes_input.json'), function(err, result) {
+      should.not.exist(err) ;
+      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
+    });
+    done() ;
+  }) ;
+
   it('ports missing value', function(done) {
     let outputYML = fs.readFileSync('./tests/8_output.yml');
 
     composer.generate(fs.readFileSync('./tests/8_input.json'), function(err, result) {
+      should.not.exist(err) ;
+      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
+    });
+    done() ;
+  }) ;
+
+  it('volumes missing values', function(done) {
+    let outputYML = fs.readFileSync('./tests/volumes_misising_value.yml');
+
+    composer.generate(fs.readFileSync('./tests/volumes_missing_value.json'), function(err, result) {
       should.not.exist(err) ;
       should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
     });

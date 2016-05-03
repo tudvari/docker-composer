@@ -14,7 +14,7 @@
         ],
         "image" : "tudvari.com:5000/warper/ms_config:LATEST",
         "volumes": [
-          "/home/someuser/test:/var/www/test"
+
         ]
 
     },
@@ -32,7 +32,7 @@
             "8692"
         ],
         "volumes": [
-          "/home/someuser/test:/var/www/test"
+
         ]
     }
 }
