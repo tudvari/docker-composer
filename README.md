@@ -1,5 +1,5 @@
 # Composer
-Node.js package for generating docker-compose.yml file for containers from a JSON document.
+NodeJS package for generating docker-compose.yml file for containers from a JSON document.
 
 ## About the package
 
