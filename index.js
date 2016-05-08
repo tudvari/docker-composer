@@ -11,8 +11,6 @@ let fragments = [];
  * @return {String} - composed yml structure for the prop
  */
 function processSingleProp(prop, serviceProperties, version) {
-    console.log("===============================================================================")
-    console.log(version)
     prop = prop.trim();
     var ymlFragment = '';
     if (serviceProperties[prop] == undefined) return "";
