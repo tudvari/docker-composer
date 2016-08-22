@@ -1,7 +1,7 @@
 service:
   environment:
-   - WARPER_PORT:1234
-   - WARPER_IP:127.0.0.1
+   - WARPER_PORT=1234
+   - WARPER_IP=127.0.0.1
   extra_hosts:
    - amqphost:10.0.0.4
    - mongohost:10.0.0.4

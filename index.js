@@ -29,9 +29,15 @@ function processSingleProp(prop, serviceProperties){
       if (Object.getOwnPropertyNames(objectKey).length) {
         // Object entry -> iterate and build props
         ymlFragment = ymlFragment.concat("  ").concat(prop + ':\n');
+        // Some props are using another concat instead of : for composing the values
+        // For this we are using the variable _concatFragment
+        var _concatFragment = ":";
+        if(prop == "environment"){
+          _concatFragment = "=";
+        };
         for (let envJSONKey of Object.getOwnPropertyNames(objectKey)) {
           let objValue = objectKey[envJSONKey];
-          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(":").concat(objValue).concat('\n') ;
+          ymlFragment = ymlFragment.concat("   - ").concat(envJSONKey).concat(_concatFragment).concat(objValue).concat('\n') ;
         }
       };
     } else {
