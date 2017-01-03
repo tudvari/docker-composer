@@ -1,3 +1,8 @@
+engines:
+  eslint:
+    enabled: true
+  nodesecurity:
+  	enabled: true
 exclude_paths:
 - "tests.js"
 - "tests/"
