@@ -13,3 +13,8 @@ ratings:
 exclude_paths:
   - tests.js
   - tests/
+  - .editorconfig
+  - .esformatter
+  - .eslintrc.json
+  - .travis.yml
+
