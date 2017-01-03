@@ -1,8 +1,15 @@
+---
 engines:
   eslint:
-	enabled: true
-  nodesecurity:
-	enabled: true
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - "javascript"
+ratings:
+  paths:
+  - "**.md"
 exclude_paths:
-- "tests.js"
-- "tests/"
+  - tests.js
+  - tests/
