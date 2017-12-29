@@ -13,12 +13,12 @@
     "compose",
     "docker-compose.yml"
   ],
-  "repository" :
-  { "type" : "git",
-    "url" : "https://github.com/tudvari/docker-composer.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tudvari/docker-composer.git"
   },
   "author": {
-    "name" : "Tibor Udvari",
+    "name": "Tibor Udvari",
     "email": "tudvari@tudvari.com"
   },
   "contributors": [
@@ -30,15 +30,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "2.1.4"
+    "async": "2.6.0"
   },
   "devDependencies": {
-    "eslint": "^3.14.0",
+    "eslint": "4.14.0",
     "gulp": "3.9.1",
-    "mocha": "3.2.0",
-    "should": "11.1.2",
-    "gulp-eslint": "3.0.1",
-    "gulp-debug": "3.0.0",
+    "mocha": "4.1.0",
+    "should": "13.2.0",
+    "gulp-eslint": "4.0.0",
+    "gulp-debug": "3.1.0",
     "istanbul": "0.4.5"
   }
 }
