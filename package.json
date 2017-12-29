@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NodeJS module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
@@ -13,12 +13,12 @@
     "compose",
     "docker-compose.yml"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tudvari/docker-composer.git"
+  "repository" :
+  { "type" : "git",
+    "url" : "https://github.com/tudvari/docker-composer.git"
   },
   "author": {
-    "name": "Tibor Udvari",
+    "name" : "Tibor Udvari",
     "email": "tudvari@tudvari.com"
   },
   "contributors": [

@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 2.0.2 (2017.12.29)
+- Refresh dependencies.
+
 ## Version 2.0.1 (2017.01.03)
 - Code Quality improvements, new eslint ruleset, editorconfig, etc..
 
