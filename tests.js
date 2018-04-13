@@ -52,44 +52,37 @@ describe('composer', function () {
 			outputYML.toString().replace(/(\r\n|\n|\r)/gm, ''))
   })
 
-  it.skip('environment missing value', function(done) {
-    let outputYML = fs.readFileSync('./tests/4_output.yml');
-    composer.generate(fs.readFileSync('./tests/4_input.json'), function(err, result) {
-      should.not.exist(err) ;
-      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
-    });
-    done() ;
-  }) ;
+  it('environment missing value', async function() {
+    let outputYML = fs.readFileSync('./tests/4_output.yml')
 
-  it.skip('environment missing', function(done) {
-    let outputYML = fs.readFileSync('./tests/5_output.yml');
+		let result = await composer.generate(fs.readFileSync('./tests/4_input.json'))
+		should.equal(result.replace(/(\r\n|\n|\r)/gm, ''),
+			outputYML.toString().replace(/(\r\n|\n|\r)/gm, ''))
+  })
 
-    composer.generate(fs.readFileSync('./tests/5_input.json'), function(err, result) {
-      should.not.exist(err) ;
-      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
-    });
-    done() ;
-  }) ;
+  it('environment missing', async function() {
+    let outputYML = fs.readFileSync('./tests/5_output.yml')
 
-  it.skip('extra_hosts missing', function(done) {
-    let outputYML = fs.readFileSync('./tests/6_output.yml');
+		let result = await composer.generate(fs.readFileSync('./tests/5_input.json'))
+		should.equal(result.replace(/(\r\n|\n|\r)/gm, ''),
+			outputYML.toString().replace(/(\r\n|\n|\r)/gm, ''))
+  })
 
-    composer.generate(fs.readFileSync('./tests/6_input.json'), function(err, result) {
-      should.not.exist(err) ;
-      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
-    });
-    done() ;
-  }) ;
+  it('extra_hosts missing', async function() {
+    let outputYML = fs.readFileSync('./tests/6_output.yml')
 
-  it.skip('extra_hosts missing value', function(done) {
-    let outputYML = fs.readFileSync('./tests/7_output.yml');
+    let result = await composer.generate(fs.readFileSync('./tests/6_input.json'))
+		should.equal(result.replace(/(\r\n|\n|\r)/gm, ''),
+			outputYML.toString().replace(/(\r\n|\n|\r)/gm, ''))
+  })
 
-    composer.generate(fs.readFileSync('./tests/7_input.json'), function(err, result) {
-      should.not.exist(err) ;
-      should.equal(result.replace(/(\r\n|\n|\r)/gm, ""), outputYML.toString().replace(/(\r\n|\n|\r)/gm, "")) ;
-    });
-    done() ;
-  }) ;
+  it('extra_hosts missing value', async function() {
+    let outputYML = fs.readFileSync('./tests/7_output.yml')
+
+    let result = await composer.generate(fs.readFileSync('./tests/7_input.json'))
+		should.equal(result.replace(/(\r\n|\n|\r)/gm, ''),
+			outputYML.toString().replace(/(\r\n|\n|\r)/gm, ''))
+  })
 
   it.skip('input json is missing', function(done) {
     composer.generate(null, function(err, result) {
