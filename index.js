@@ -74,35 +74,36 @@ function processProps (serviceName, serviceProperties, cb) {
 /**
 * @exports
 */
-module.exports.generate = function (json, callback) {
+module.exports.generate = function (json) {
+	return new Promise(function (resolve, reject) {
+		fragments = []
 
-	fragments = []
+		// input validations
+		if (!json) {
+			reject(new Error('json is missing'))
+		}
 
-	// input validations
-	if (!json) {
-		return callback(new Error('json is missing'))
-	}
+		let parsedJSON = ''
 
-	let parsedJSON = ''
+		try {
+			parsedJSON = JSON.parse(json)
+		} catch (err) {
+			// Send back the error
+			reject(err)
+		}
 
-	try {
-		parsedJSON = JSON.parse(json)
-	} catch (err) {
-		// Send back the error
-		return callback(err)
-	}
+		// JSON processing
 
-	// JSON processing
+		async.forEachOf(parsedJSON, function (value, key, callback) {
+			processProps(key, value, callback)
+		})
 
-	async.forEachOf(parsedJSON, function (value, key, callback) {
-		processProps(key, value, callback)
+		let resultString = ''
+
+		for (let fragment of fragments) {
+			resultString = resultString.concat(fragment)
+		}
+		// Return the callback with the resulted string
+		resolve(resultString)
 	})
-
-	let resultString = ''
-
-	for (let fragment of fragments) {
-		resultString = resultString.concat(fragment)
-	}
-	// Return the callback with the resulted string
-	return callback(null, resultString)
 }
