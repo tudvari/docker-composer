@@ -1,7 +1,11 @@
 # Release Notes
 
+## Version 3.0.1 (2018.04.15)
+- Remove npm package from dependencies.
+
 ## Version 3.0.0 (2018.04.15)
 - Change from callback to Promise for async/await support.
+
 ## Version 2.0.2 (2017.12.29)
 - Refresh dependencies.
 

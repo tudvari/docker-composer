@@ -71,8 +71,8 @@ Input JSON:
             "8692"
         ]
     }
-}```
-
+}
+```
 Result:
 ```yml
 service:
