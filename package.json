@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "NodeJS module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "2.6.0",
-    "npm": "^5.8.0"
+    "async": "2.6.0"
   },
   "devDependencies": {
     "eslint": "4.19.1",
