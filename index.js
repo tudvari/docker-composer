@@ -1,5 +1,4 @@
 'use strict'
-
 var async = require('async')
 var fragments = []
 
@@ -14,9 +13,9 @@ function processSingleProp (prop, serviceProperties) {
 	prop = prop.trim()
 	var ymlFragment = ''
 	if (serviceProperties[prop] === undefined) return ''
-  // Check if it is an array
+	// Check if it is an array
 	if (Array.isArray(serviceProperties[prop])) {
-    // Array entry -> iterate and build props
+		// Array entry -> iterate and build props
 		if (serviceProperties[prop].length > 0) {
 			ymlFragment = ymlFragment.concat('  ').concat(prop + ':\n')
 			for (let propVal of serviceProperties[prop]) {
@@ -27,10 +26,10 @@ function processSingleProp (prop, serviceProperties) {
 		if (typeof serviceProperties[prop] === 'object' && !Array.isArray(serviceProperties[prop])) {
 			var objectKey = serviceProperties[prop]
 			if (Object.getOwnPropertyNames(objectKey).length) {
-        // Object entry -> iterate and build props
+				// Object entry -> iterate and build props
 				ymlFragment = ymlFragment.concat('  ').concat(prop + ':\n')
-        // Some props are using another concat instead of : for composing the values
-        // For this we are using the variable _concatFragment
+				// Some props are using another concat instead of : for composing the values
+				// For this we are using the variable _concatFragment
 				var _concatFragment = ':'
 				if (prop === 'environment') {
 					_concatFragment = '='
@@ -41,32 +40,32 @@ function processSingleProp (prop, serviceProperties) {
 				}
 			}
 		} else {
-      // It's not an array
+			// It's not an array
 			ymlFragment = ymlFragment.concat('  ' + prop + ': ').concat(serviceProperties[prop]).concat('\n')
 		}
 	}
-  // return the fragment
+	// return the fragment
 	return ymlFragment
 }
 
 function processProps (serviceName, serviceProperties, cb) {
-  // Instantiate the ymlFragment
+	// Instantiate the ymlFragment
 	var ymlFragment = ''
-  // Check the existance of the service name
+	// Check the existance of the service name
 	if (!serviceName) {
 		var error = new Error('missing servicename..')
 		return cb(error)
 	}
-  // Check the existance of serviceProperties
+	// Check the existance of serviceProperties
 	if (!serviceProperties) {
 		let error = new Error('missing properties..')
 		return cb(error)
 	}
 
-  // Concat the service name
+	// Concat the service name
 	fragments.push(ymlFragment.concat(serviceName).concat(':').concat('\n'))
 
-  // Iterate throughout all the JSON file and build the requested services in the YML file
+	// Iterate throughout all the JSON file and build the requested services in the YML file
 	for (let prop of Object.getOwnPropertyNames(serviceProperties)) {
 		fragments.push(processSingleProp(prop, serviceProperties))
 	}
@@ -75,35 +74,36 @@ function processProps (serviceName, serviceProperties, cb) {
 /**
 * @exports
 */
-module.exports.generate = function (json, callback) {
+module.exports.generate = function (json) {
+	return new Promise(function (resolve, reject) {
+		fragments = []
 
-	fragments = []
+		// input validations
+		if (!json) {
+			reject(new Error('json is missing'))
+		}
 
-  // input validations
-	if (!json) {
-		return callback(new Error('json is missing'))
-	}
+		let parsedJSON = ''
 
-	let parsedJSON = ''
+		try {
+			parsedJSON = JSON.parse(json)
+		} catch (err) {
+			// Send back the error
+			reject(err)
+		}
 
-	try {
-		parsedJSON = JSON.parse(json)
-	} catch (err) {
-    // Send back the error
-		return callback(err)
-	}
+		// JSON processing
 
-  // JSON processing
+		async.forEachOf(parsedJSON, function (value, key, callback) {
+			processProps(key, value, callback)
+		})
 
-	async.forEachOf(parsedJSON, function (value, key, callback) {
-		processProps(key, value, callback)
+		let resultString = ''
+
+		for (let fragment of fragments) {
+			resultString = resultString.concat(fragment)
+		}
+		// Return the callback with the resulted string
+		resolve(resultString)
 	})
-
-	let resultString = ''
-
-	for (let fragment of fragments) {
-		resultString = resultString.concat(fragment)
-	}
-  // Return the callback with the resulted string
-	return callback(null, resultString)
 }

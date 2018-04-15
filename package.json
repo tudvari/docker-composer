@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "NodeJS module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
@@ -33,9 +33,9 @@
     "async": "2.6.0"
   },
   "devDependencies": {
-    "eslint": "4.17.0",
+    "eslint": "4.19.1",
     "gulp": "3.9.1",
-    "mocha": "5.0.0",
+    "mocha": "5.0.5",
     "should": "13.2.1",
     "gulp-eslint": "4.0.2",
     "gulp-debug": "3.2.0",
