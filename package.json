@@ -30,7 +30,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "2.6.0"
+    "async": "2.6.1"
   },
   "devDependencies": {
     "eslint": "4.19.1",
