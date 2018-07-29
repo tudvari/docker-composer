@@ -1,5 +1,4 @@
-'use strict'
-var async = require('async')
+const async = require('async')
 var fragments = []
 
 /**
