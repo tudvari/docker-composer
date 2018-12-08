@@ -1,0 +1,18 @@
+{
+"version" : "3",
+"services" :
+    {
+        "nginx" : {
+            "ports" : [
+                "80"
+                        ],
+            "image" : "nginx:latest"
+        },
+        "http" : {
+            "ports" : [
+                "443"
+            ],
+            "image" : "nginx:latest"
+        }
+    }
+}
