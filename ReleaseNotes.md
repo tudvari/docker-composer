@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 3.1.0 ( TBD )
+## Version 3.1.0 ( 2018.12.09 )
 - Introduce JSON schema for input validation
 - Version 3 Compose file format support
 
