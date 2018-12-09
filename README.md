@@ -2,7 +2,7 @@
 
 Generate Docker Compose descriptor from a JSON document.
 
-[![Build Status](https://travis-ci.org/tudvari/docker-composer.svg?branch=master)](https://travis-ci.org/tudvari/docker-composer) [![Maintainability](https://api.codeclimate.com/v1/badges/2e96e00e821ec94a629a/maintainability)](https://codeclimate.com/github/tudvari/composer/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/2e96e00e821ec94a629a/test_coverage)](https://codeclimate.com/github/tudvari/composer/test_coverage)
+[![Build Status](https://travis-ci.org/tudvari/docker-composer.svg?branch=master)](https://travis-ci.org/tudvari/docker-composer) [![Maintainability](https://api.codeclimate.com/v1/badges/2e96e00e821ec94a629a/maintainability)](https://codeclimate.com/github/tudvari/composer/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/2e96e00e821ec94a629a/test_coverage)](https://codeclimate.com/github/tudvari/composer/test_coverage) [![npm version](https://badge.fury.io/js/docker-composer.svg)](https://badge.fury.io/js/docker-composer)
 
 ## About the package
 
