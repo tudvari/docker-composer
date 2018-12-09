@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 3.1.0 ( TBD )
+- Introduce JSON schema for input validation
+- Version 3 Compose file format support
+
 ## Version 3.0.1 (2018.04.15)
 - Remove npm package from dependencies.
 
