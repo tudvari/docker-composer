@@ -67,4 +67,8 @@ You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer
       image: "nginx:latest"
 ```
 
+### License
+
+Copyright (c) 2015 Tibor Udvari. Released under the MIT license. See [LICENSE](https://github.com/tudvari/docker-composer/blob/master/LICENSE) for details.
+
 
