@@ -13,9 +13,8 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-#### Version 3.1.0 ( 2018.12.09 )
-- Introduce JSON schema for input validation
-- Version 3 Compose file format support
+#### Version 3.1.0 ( 2018.12.12 )
+- Schema loading fix (thanks for andrepurnomo)
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 
