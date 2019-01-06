@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 3.1.2 ( 2019.01.06)
+- Update dependencies
+
 ## Version 3.1.1 ( 2018.12.12 )
 - Schema loading fix (thanks for andrepurnomo)
 
