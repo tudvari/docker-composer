@@ -34,9 +34,9 @@
     "jsonschema": "^1.2.4"
   },
   "devDependencies": {
-    "js-yaml": "^3.12.1",
+    "js-yaml": "^3.12.2",
     "atob": ">=2.1.2",
-    "eslint": "5.15.0",
+    "eslint": "5.15.3",
     "gulp": "^4.0.0",
     "gulp-debug": "4.0.0",
     "gulp-eslint": "5.0.0",
