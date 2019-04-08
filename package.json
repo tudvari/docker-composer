@@ -42,7 +42,7 @@
     "gulp-eslint": "5.0.0",
     "istanbul": "0.4.5",
     "mixin-deep": ">=2.0.0",
-    "mocha": "6.0.2",
+    "mocha": "6.1.2",
     "should": "13.2.3"
   }
 }
