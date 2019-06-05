@@ -1,5 +1,8 @@
 # Release Notes
 
+#### Version 3.1.3 ( 2019.06.05)
+- Update dependencies
+
 ## Version 3.1.2 ( 2019.01.06)
 - Update dependencies
 
