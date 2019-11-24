@@ -1,5 +1,10 @@
 # Release Notes
 
+#### Version 3.1.5 (2019.11.24)
+- Update dependencies
+- Use nyc instead of istanbul
+- Published package optimalization
+
 #### Version 3.1.4 ( 2019.07.11)
 - Update dependencies for security reason
 

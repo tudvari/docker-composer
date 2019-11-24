@@ -1,11 +1,11 @@
 {
   "name": "docker-composer",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "NodeJS module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha *Test.js",
-    "coverage": "istanbul cover _mocha *Test.js"
+    "coverage": "nyc npm run test"
   },
   "keywords": [
     "gulp",
@@ -34,15 +34,22 @@
     "jsonschema": "^1.2.4"
   },
   "devDependencies": {
-    "js-yaml": "^3.13.1",
     "atob": ">=2.1.2",
-    "eslint": "6.6.0",
+    "eslint": "6.7.0",
     "gulp": "^4.0.2",
     "gulp-debug": "4.0.0",
     "gulp-eslint": "6.0.0",
-    "istanbul": "0.4.5",
+    "js-yaml": "^3.13.1",
     "mixin-deep": ">=2.0.1",
     "mocha": "6.2.2",
+    "nyc": "^14.1.1",
     "should": "13.2.3"
+  },
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "*Test.js",
+      "Gulpfile.js"
+    ]
   }
 }
