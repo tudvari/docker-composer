@@ -1,5 +1,8 @@
 # Release Notes
 
+#### Version 3.1.6 (2019.12.01)
+- Update dependencies
+
 #### Version 3.1.5 (2019.11.24)
 - Update dependencies
 - Use nyc instead of istanbul

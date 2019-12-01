@@ -8,5 +8,6 @@ Gulpfile.js
 .git
 .gitignore
 .nyc_output
-.travis.ymlgenerateTest.js
+.travis.yml
+generateTest.js
 test_datas

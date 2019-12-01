@@ -13,10 +13,8 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-#### Version 3.1.5 (2019.11.24)
+#### Version 3.1.6 (2019.12.01)
 - Update dependencies
-- Use nyc instead of istanbul
-- Published package optimalization
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 
