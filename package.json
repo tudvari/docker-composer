@@ -35,21 +35,17 @@
   },
   "devDependencies": {
     "atob": ">=2.1.2",
-    "eslint": "6.8.0",
-    "gulp": "^4.0.2",
-    "gulp-debug": "4.0.0",
-    "gulp-eslint": "6.0.0",
+    "eslint": "7.0.0-alpha.2",
     "js-yaml": "^3.13.1",
     "mixin-deep": ">=2.0.1",
-    "mocha": "7.1.0",
+    "mocha": "7.1.1",
     "nyc": "^15.0.0",
     "should": "13.2.3"
   },
   "nyc": {
     "all": true,
     "exclude": [
-      "*Test.js",
-      "Gulpfile.js"
+      "*Test.js"
     ]
   }
 }
