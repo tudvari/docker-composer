@@ -11,3 +11,4 @@ Gulpfile.js
 .travis.yml
 generateTest.js
 test_datas
+.github
