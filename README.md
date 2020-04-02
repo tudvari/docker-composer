@@ -14,9 +14,8 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 3.1.7 (21.03.2020)
-- Vulnerable dependency update
-    * More details: https://github.com/advisories/GHSA-7fhm-mqm4-2wp7
+## Version 3.1.8 (02.04.2020)
+- Dependency update
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 

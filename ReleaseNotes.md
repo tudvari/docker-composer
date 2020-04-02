@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 3.1.8 (02.04.2020)
+- Dependency update
+
 ## Version 3.1.7 (21.03.2020)
 - Vulnerable dependency update
     * More details: https://github.com/advisories/GHSA-7fhm-mqm4-2wp7
