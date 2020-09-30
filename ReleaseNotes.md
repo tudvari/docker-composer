@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 3.1.9 (30.09.2020)
+- Maintenance release, dependency updates
+
 ## Version 3.1.8 (02.04.2020)
 - Dependency update
 

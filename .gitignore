@@ -3,3 +3,5 @@ coverage
 .DS_Store
 *.swp
 .nyc_output
+.idea
+*.iml
