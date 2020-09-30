@@ -12,3 +12,4 @@ Gulpfile.js
 generateTest.js
 test_datas
 .github
+.idea
