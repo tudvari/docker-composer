@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "3.1.10",
+  "version": "3.1.11",
   "description": "NodeJS module for generating docker-compose.yml from a json document.",
   "main": "index.js",
   "scripts": {
@@ -31,11 +31,11 @@
   "license": "MIT",
   "dependencies": {
     "json2yaml": "^1.1.0",
-    "jsonschema": "^1.2.10"
+    "jsonschema": "^1.2.11"
   },
   "devDependencies": {
     "atob": ">=2.1.2",
-    "eslint": "7.10.0",
+    "eslint": "7.11.0",
     "js-yaml": "^3.14.0",
     "mixin-deep": ">=2.0.1",
     "mocha": "8.1.3",
