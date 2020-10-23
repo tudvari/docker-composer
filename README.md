@@ -14,6 +14,9 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
+## Version 3.1.13 (23.10.2020)
+- Maintenance release, dependency updates
+
 ## Version 3.1.12 (17.10.2020)
 - Maintenance release, dependency updates
 
