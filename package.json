@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "json2yaml": "^1.1.0",
-    "jsonschema": "^1.3.0"
+    "jsonschema": "^1.4.0"
   },
   "devDependencies": {
     "atob": ">=2.1.2",
