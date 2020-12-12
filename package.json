@@ -36,7 +36,7 @@
   "devDependencies": {
     "atob": ">=2.1.2",
     "eslint": "7.15.0",
-    "js-yaml": "^3.14.0",
+    "js-yaml": "^3.14.1",
     "mixin-deep": ">=2.0.1",
     "mocha": "8.2.1",
     "nyc": "^15.1.0",
