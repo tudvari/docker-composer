@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha *Test.js",
-    "coverage": "nyc npm run test"
+    "coverage": "nyc npm run test",
+    "generate-ts-types": "./node_modules/gulp-cli/bin/gulp.js"
   },
   "keywords": [
     "gulp",
@@ -36,7 +37,10 @@
   "devDependencies": {
     "atob": ">=2.1.2",
     "eslint": "7.16.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
     "js-yaml": "^3.14.1",
+    "json-schema-to-typescript": "^10.0.3",
     "mixin-deep": ">=2.0.1",
     "mocha": "8.2.1",
     "nyc": "^15.1.0",
