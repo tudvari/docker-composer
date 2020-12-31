@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 4.0.0 (31.12.2020)
+- Typescript type definitions
+
 ## Version 3.1.13 (23.10.2020)
 - Maintenance release, dependency updates
 
