@@ -7,9 +7,9 @@ describe('composer', function ( ) {
 
 	it('Should equal', function ( ) {
 
-		let expectedYML = YML.safeLoad(fs.readFileSync('./test_datas/first.yml'), 'utf-8')
+		let expectedYML = YML.load(fs.readFileSync('./test_datas/first.yml'), 'utf-8')
 		let result = composer.generate(JSON.parse(fs.readFileSync('./test_datas/first.json')))
-		let actualYML = YML.safeLoad(result, 'utf-8')
+		let actualYML = YML.load(result, 'utf-8')
 
 		should.equal(YML.dump(actualYML), YML.dump(expectedYML))
 	})
