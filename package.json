@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "atob": ">=2.1.2",
-    "eslint": "7.31.0",
+    "eslint": "7.32.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "js-yaml": "^4.0.0",
