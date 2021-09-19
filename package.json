@@ -37,7 +37,7 @@
   "devDependencies": {
     "atob": ">=2.1.2",
     "eslint": "7.32.0",
-    "gulp": "^4.0.2",
+    "gulp": "^3.9.1",
     "gulp-cli": "^2.3.0",
     "js-yaml": "^4.0.0",
     "json-schema-to-typescript": "^10.1.4",
