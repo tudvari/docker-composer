@@ -14,7 +14,7 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 4.0.1 (31.03.2021)
+## Version 4.0.2 (27.09.2021)
 - Maintenance release, dependency updates
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
