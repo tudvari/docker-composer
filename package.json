@@ -35,7 +35,7 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
-    "ansi-regex": "^5.0.1",
+    "ansi-regex": "^6.0.1",
     "atob": ">=2.1.2",
     "eslint": "7.32.0",
     "gulp": "^4.0.2",
