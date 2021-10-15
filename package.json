@@ -37,7 +37,7 @@
   "devDependencies": {
     "ansi-regex": "^6.0.1",
     "atob": ">=2.1.2",
-    "eslint": "8.0.0",
+    "eslint": "8.0.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "js-yaml": "^4.0.0",
