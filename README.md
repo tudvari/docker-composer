@@ -4,7 +4,7 @@ Generate Docker Compose descriptor from a JSON document.
 
 ![Node.js CI](https://github.com/tudvari/docker-composer/workflows/Node.js%20CI/badge.svg)
 [![npm version](https://badge.fury.io/js/docker-composer.svg)](https://badge.fury.io/js/docker-composer)
-
+[![CodeQL](https://github.com/tudvari/docker-composer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tudvari/docker-composer/actions/workflows/codeql-analysis.yml)
 ## About the package
 
 The reason behind this package is support the Docker Compose descriptor generation from Javascript. You are able to use all Docker Compose keyword to describe your containers and services.
