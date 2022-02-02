@@ -39,7 +39,7 @@
     "atob": ">=2.1.2",
     "copy-props": "^3.0.1",
     "eslint": "8.8.0",
-    "glob-parent": "^5.1.2",
+    "glob-parent": "5.1.2",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "js-yaml": "^4.0.0",
