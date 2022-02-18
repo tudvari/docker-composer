@@ -279,6 +279,7 @@
         "type": ["object", "null"],
         "properties": {
           "driver": {"type": "string"},
+          "name":{"type":"string"},
           "driver_opts": {
             "type": "object",
             "patternProperties": {
