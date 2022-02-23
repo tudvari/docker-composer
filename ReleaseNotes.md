@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 4.1.0 23.03.2022)
+- Extending networking schema with name property. (Thanks @shoxxdj)
+- dependency updates
+
 ## Version 4.0.3 (18.01.2022)
 - Maintenance release, dependency updates
 

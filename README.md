@@ -14,8 +14,9 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 4.0.3 (18.01.2022)
-- Maintenance release, dependency updates
+## Version 4.1.0 (23.02.2022)
+- Extending networking schema with name property. (Thanks @shoxxdj)
+- Dependency updates
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 
