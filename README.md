@@ -14,8 +14,9 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 4.1.2 (05.11.2022)
-- Maintenance release, dependency updates
+## Version 4.1.3 (22.12.2022)
+- Remove gulp
+- Update dependencies
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 

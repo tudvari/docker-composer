@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 4.1.3 (22.12.2022)
+- Remove gulp
+- Update dependencies
+
 ## Version 4.1.2 (05.11.2022)
 - Maintenance release, dependency updates
 
