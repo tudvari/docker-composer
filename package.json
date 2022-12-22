@@ -6,10 +6,9 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha.js *Test.js",
     "coverage": "nyc npm run test",
-    "generate-ts-types": "./node_modules/gulp-cli/bin/gulp.js"
+    "generate-ts-types": "node compile-ts-types.js"
   },
   "keywords": [
-    "gulp",
     "docker",
     "compose",
     "docker-compose.yml"
@@ -35,19 +34,11 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
-    "ansi-regex": "^6.0.1",
-    "atob": ">=2.1.2",
-    "copy-props": "^4.0.0",
     "eslint": "8.30.0",
-    "glob-parent": "6.0.2",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
     "js-yaml": "^4.0.0",
     "json-schema-to-typescript": "^11.0.0",
-    "mixin-deep": ">=2.0.1",
     "mocha": "10.2.0",
     "nyc": "^15.1.0",
-    "set-value": "^4.0.1",
     "should": "13.2.3"
   },
   "nyc": {
