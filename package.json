@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha.js ./tests/*Test.js",
     "coverage": "nyc npm run test",
-    "generate-ts-types": "node ./scripts/compile-ts-types.js"
+    "generate-ts-types": "node ./scripts/compile-ts-types.js",
+    "linter": "npx eslint *.js tests/*.js"
   },
   "keywords": [
     "docker",
