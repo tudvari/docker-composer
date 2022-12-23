@@ -7,6 +7,7 @@ const compiler = require('json-schema-to-typescript');
 async function runner() {
   const compiledTs = await compiler.compileFromFile('schema.json');
   fs.writeFileSync('index.d.ts', compiledTs);
+  console.log('Types are generated..');
 }
 
 runner();
