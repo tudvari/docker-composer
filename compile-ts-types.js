@@ -1,10 +1,13 @@
-const fs = require('fs')
-const compiler = require('json-schema-to-typescript')
+const fs = require('fs');
+const compiler = require('json-schema-to-typescript');
 
-async function f() {
+/**
+ * Helper function to generate typescript types from json schema
+ */
+async function runner() {
   const compiledTs = await compiler.compileFromFile('schema.json');
-  fs.writeFileSync('index.d.ts', compiledTs)
+  fs.writeFileSync('index.d.ts', compiledTs);
 }
 
-f();
+runner();
 
