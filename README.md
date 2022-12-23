@@ -24,9 +24,9 @@ You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer
 
 ```javascript
 
-  const composer = require('docker-composer')
+  const composer = require('docker-composer');
     .
-  var generatedYML = composer.generate( inputJSON )
+  const generatedYML = composer.generate(inputJSON);
 ```
 
 ## Full Example
