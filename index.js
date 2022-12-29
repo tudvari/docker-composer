@@ -1,8 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const YAML = require('json2yaml');
-const Validator = require('jsonschema').Validator;
-const v = new Validator();
+const lib = require('./lib/lib.js');
 
 /**
  * Generate compose file from a JSON document
@@ -10,13 +6,7 @@ const v = new Validator();
  * @return {string} The generated compose file in YAML format.
  */
 function generateCompose(inputJSON) {
-  const schema = JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, './schema.json')));
-
-  if (!v.validate(inputJSON, schema).valid) {
-    throw new Error('Invalid input!');
-  }
-  return YAML.stringify(inputJSON);
+  return lib.generateCompose(inputJSON);
 }
 
 module.exports = {
