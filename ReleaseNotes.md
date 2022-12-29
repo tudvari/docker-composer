@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 5.0.0 (29.12.2022)
+- Reorganize code base
+- Update dependencies
+- Change code style
+
 ## Version 4.1.3 (22.12.2022)
 - Remove gulp
 - Update dependencies
