@@ -1,3 +1,4 @@
+/*eslint no-undef: "warn"*/
 const fs = require('fs');
 const should = require('should');
 const composer = require('../index');
