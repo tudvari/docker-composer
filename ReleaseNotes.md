@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 5.1.0 (26.05.2024)
+- Update dependencies
+- Support aux_addresses keyword in network/ipam config object
+- Support attachable keyword in network config object
+
 ## Version 5.0.2 (21.10.2023)
 - Update dependencies
 

@@ -2,7 +2,7 @@
 
 Generate Docker Compose descriptor from a JSON document.
 
-![Node.js CI](https://github.com/tudvari/docker-composer/workflows/Node.js%20CI/badge.svg)
+[![Build & Test](https://github.com/tudvari/docker-composer/actions/workflows/nodejs.yml/badge.svg)](https://github.com/tudvari/docker-composer/actions/workflows/nodejs.yml)
 [![npm version](https://badge.fury.io/js/docker-composer.svg)](https://badge.fury.io/js/docker-composer)
 [![CodeQL](https://github.com/tudvari/docker-composer/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/tudvari/docker-composer/actions/workflows/codeql-analysis.yml)
 ## About the package
@@ -14,8 +14,10 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 5.0.2 (21.10.2023)
+## Version 5.1.0 (26.05.2024)
 - Update dependencies
+- Support aux_addresses keyword in network/ipam config object
+- Support attachable keyword in network config object
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 

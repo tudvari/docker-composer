@@ -290,12 +290,16 @@
             "type": "object",
             "properties": {
               "driver": {"type": "string"},
+              "attachable": {"type": "boolean"},
               "config": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "subnet": {"type": "string", "format": "subnet_ip_address"}
+                    "subnet": {"type": "string", "format": "subnet_ip_address"},
+                    "aux_addresses" : {
+                      "type" : "#/definitions/list_or_dict"
+                    }
                   },
                   "additionalProperties": false
                 }
