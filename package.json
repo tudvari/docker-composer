@@ -1,6 +1,6 @@
 {
   "name": "docker-composer",
-  "version": "5.0.2",
+  "version": "5.1.0",
   "description": "Library for generating docker-compose.yml from JSON.",
   "main": "index.js",
   "scripts": {
