@@ -14,10 +14,8 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 5.1.0 (26.05.2024)
+## Version 5.1.1 (05.01.2025)
 - Update dependencies
-- Support aux_addresses keyword in network/ipam config object
-- Support attachable keyword in network config object
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 

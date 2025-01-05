@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 5.1.1 (05.01.2025)
+- Update dependencies
+
 ## Version 5.1.0 (26.05.2024)
 - Update dependencies
 - Support aux_addresses keyword in network/ipam config object
