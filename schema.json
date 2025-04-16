@@ -286,6 +286,7 @@
               "^.+$": {"type": ["string", "number"]}
             }
           },
+          "attachable": {"type": "boolean"},
           "ipam": {
             "type": "object",
             "properties": {
