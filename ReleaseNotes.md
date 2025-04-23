@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 5.2.0 (23.04.2025)
+- Adding attachable keyword support for network configuration
+
 ## Version 5.1.1 (05.01.2025)
 - Update dependencies
 
@@ -135,4 +138,4 @@
 ## Version 1.0.0 and Version 1.0.1 (2015.10.14)
 
 - First public version released
-- Supported keywords: ports, environment, extra_hosts, image
+- Supported keywords: ports, environment, extra_hosts, imag e
