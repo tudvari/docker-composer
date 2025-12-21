@@ -14,8 +14,8 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
-## Version 5.2.0 (23.04.2025)
-- Adding attachable keyword support for network configuration
+## Version 5.2.1 (21.12.2025)
+- Maintenance release 
 
 You can find all Release Notes [HERE](https://github.com/tudvari/docker-composer/blob/master/ReleaseNotes.md).
 

@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 5.2.1 (21.12.2025)
+- Update dependencies
+
 ## Version 5.2.0 (23.04.2025)
 - Adding attachable keyword support for network configuration
 
