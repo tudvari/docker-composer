@@ -35,7 +35,7 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
+    "@eslint/js": "^10.0.1",
     "globals": "^17.0.0",
     "js-yaml": "^4.0.0",
     "json-schema-to-typescript": "^15.0.0",
