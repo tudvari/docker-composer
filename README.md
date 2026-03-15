@@ -14,6 +14,10 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
+## Version 5.2.2 (15.03.2026)
+- Update dependencies
+- Migrate from mocha to jest
+
 ## Version 5.2.1 (21.12.2025)
 - Maintenance release 
 
