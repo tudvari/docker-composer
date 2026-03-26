@@ -1,5 +1,15 @@
 # Release Notes
 
+## Version 5.2.3 (26.03.2026)
+- Update dependencies
+
+## Version 5.2.2 (15.03.2026)
+- Update dependencies
+- Migrate from mocha to jest
+
+## Version 5.2.1 (21.12.2025)
+- Update dependencies
+
 ## Version 5.2.1 (21.12.2025)
 - Update dependencies
 
