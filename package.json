@@ -37,7 +37,7 @@
     "@babel/core": "^8.0.1",
     "@eslint/js": "^10.0.1",
     "globals": "^17.0.0",
-    "jest": "^25.0.0",
+    "jest": "^30.4.2",
     "js-yaml": "^5.0.0",
     "json-schema-to-typescript": "^15.0.0"
   }
