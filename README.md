@@ -14,6 +14,9 @@ Docker Compose Reference is [HERE](https://docs.docker.com/compose/compose-file/
 
 ###  Changes of the Latest Release
 
+## Version 5.2.4 (22.09.2026)
+- Update dependencies
+
 ## Version 5.2.3 (26.03.2026)
 - Update dependencies
 

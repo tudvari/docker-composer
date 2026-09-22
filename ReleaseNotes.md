@@ -1,5 +1,8 @@
 # Release Notes
 
+## Version 5.2.4 (22.09.2026)
+- Update dependencies
+
 ## Version 5.2.3 (26.03.2026)
 - Update dependencies
 
