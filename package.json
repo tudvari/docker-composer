@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "generate-ts-types": "node ./scripts/compile-ts-types.js",
-    "test": "jest --config jest.config.ts",
+    "test": "jest --config jest.config.cjs",
     "linter": "npx eslint *.js tests/*.js"
   },
   "keywords": [
@@ -34,11 +34,24 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^8.0.1",
+    "@babel/core": "8.1.0",
     "@eslint/js": "^10.0.1",
     "globals": "^17.0.0",
-    "jest": "^30.4.2",
+    "jest": "29.7.0",
     "js-yaml": "^5.0.0",
-    "json-schema-to-typescript": "^16.0.0"
+    "json-schema-to-typescript": "^16.0.0",
+    "ts-jest": "^29.4.15"
+  },
+  "overrides": {
+    "deepmerge": "^4.3.1",
+    "glob": "^10.4.0",
+    "minimatch": "^9.0.5",
+    "test-exclude": {
+      "glob": "^10.4.0",
+      "minimatch": "^9.0.5"
+    },
+    "@jest/transform": {
+      "glob": "^10.4.0"
+    }
   }
 }
