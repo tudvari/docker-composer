@@ -34,7 +34,7 @@
     "jsonschema": "^1.4.0"
   },
   "devDependencies": {
-    "@babel/core": "8.1.0",
+    "@babel/core": "8.1.2",
     "@eslint/js": "^10.0.1",
     "globals": "^17.0.0",
     "jest": "30.5.2",
